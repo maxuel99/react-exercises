@@ -2,7 +2,12 @@ import React from "react";
 
 export class Welcome extends React.Component {
     render() {
-        return <p>Welcome, {this.props.name}</p>
+        return (
+            <div>
+                <p>Welcome, {this.props.name}</p>
+                <p>Your age is, {this.props.age}</p>
+            </div>
+        )
     }
 }
 
@@ -12,5 +17,6 @@ export class Welcome extends React.Component {
 //Can you set a default value for the name prop?
 
 Welcome.defaultProps = {
-    name: 'Massimo'
+    name: 'Massimo',
+    age: 23
 }
