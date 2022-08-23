@@ -1,5 +1,4 @@
 import React from "react";
-import { Age } from "./Age";
 import { HelloWorld } from "./HelloWorld";
 import { Welcome } from "./Welcome";
 
