@@ -3,11 +3,11 @@ import { Age } from "./Age";
 
 export class Welcome extends React.Component {
     render() {
-        const name = 'Massimo'
+        const name = 'John'
         return (
             <div>
                 <p>Welcome <strong>{name}</strong></p>
-                {this.props.age && this.props.age > 18 && this.props.age < 65 &&
+                {this.props.age && this.props.age > 18 && this.props.age < 65 && name == 'John' &&
                 <Age age={this.props.age}/>}
             </div>
         )
@@ -20,5 +20,5 @@ export class Welcome extends React.Component {
 //Can you set a default value for the name prop?
 
 Welcome.defaultProps = {
-    name: 'Massimo'
+    //name: 'Massimo'
 }
