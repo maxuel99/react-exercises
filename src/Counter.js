@@ -18,6 +18,8 @@ export class Counter extends React.Component {
     //     })
     // }
 
+    //Is the constructor still required? No, isn't
+
     componentDidMount() {
         setInterval(() => {
             this.setState((state) => {
