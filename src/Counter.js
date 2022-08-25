@@ -21,7 +21,7 @@ export class Counter extends React.Component {
     //Is the constructor still required? No, isn't
 
     componentDidMount() {
-        setInterval(() => {
+        this._interval = setInterval(() => {
             this.setState((state) => {
                 return {
                     count: state.count + this.props.incrementInterval,
@@ -30,9 +30,22 @@ export class Counter extends React.Component {
         }, this.props.timeout)
     }
 
+    componentWillUnmount() {
+        if (this._interval) {
+            clearInterval(this._interval)
+        }
+    }
+
+    componentDidUpdate() {
+        if ((this.state.count > 10) && (this.state.count > 10 * this.props.initialValue)) {
+            this.setState({count: this.props.initialValue})
+        }
+    }
+    
     render() {
         return <CounterDisplay count={this.state.count}/>
     }
+
 }
 
 Counter.defaultProps = {
