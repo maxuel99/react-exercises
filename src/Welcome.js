@@ -2,8 +2,8 @@ import React from "react";
 
 export class Welcome extends React.Component {
     render() {
-        const name = 'Massimo'
-        return (
+        const name = 'Massimo'       //What happens if the name prop is a JSX expression instead of a string?  The value will be that, it will be determined
+        return (                     //How do you pass a prop that contains a JSX expression? With curly brackets {...}
             <div>
                 <p>Welcome, <strong>{name}</strong></p>
                 <p>Your age is, {this.props.age}</p>
