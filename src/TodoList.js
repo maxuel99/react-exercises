@@ -20,8 +20,6 @@ export class TodoList extends React.Component {
 
         this.state.todo = ""
 
-        console.log(this.state)
-
         event.preventDefault()
     }
 
