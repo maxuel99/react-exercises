@@ -1,30 +1,26 @@
 import React from "react";
 
 export class TodoList extends React.Component {
-    constructor(props) {
-        super(props)
+    state = {
+        item: [],
+        todo: "",
+    }
 
-        this.state = {
-            todo: "",
-            item: []
-        }
+    handleInputChange = (event) => {
+        const value = event.target.value
+        const name = event.target.name
 
+        this.setState({
+            [name]: value
+        })
     }
 
     addNewItem = (event) => {
-        if(this._inputElement.value !== "") {
-            var newItem = {
-                text: this._inputElement.value,
-                key: Date.now()
-            }
+        this.setState({item: [...this.state.item, this.state.todo]})
 
-            this.setState((prevState) => {
-                return {
-                    item: prevState.item.concat(newItem)
-                }
-            })
-        }
-        this._inputElement.value = ""
+        this.state.todo = ""
+
+        console.log(this.state)
 
         event.preventDefault()
     }
@@ -37,11 +33,11 @@ export class TodoList extends React.Component {
                 <ul>
                     {this.props.items.map((item) => (
                         <li key={item.id}>{item.name}</li>))}
-                    {this.state.item.map((item) => (
-                        <li key={item.key}>{item.text}</li>))}
+                    {this.state.item.map((subItems, subIndex) => (
+                        <li key={subItems + subIndex}>{subItems}</li>))}
                 </ul>
                 <form onSubmit={this.addNewItem}>
-                    <input name="todo" type="text" ref={(a) => this._inputElement = a} placeholder="--Add-item--" />
+                    <input name="todo" type="text" value={this.state.todo} onChange={this.handleInputChange} placeholder="--Add-item--" />
                     <button type="submit">Add</button>
                 </form>
             </div>
