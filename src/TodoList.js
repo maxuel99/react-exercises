@@ -18,7 +18,7 @@ export class TodoList extends React.Component {
     addNewItem = (event) => {
         this.setState({item: [...this.state.item, this.state.todo]})
 
-        this.state.todo = ""
+        this.setState({todo: ""});
 
         event.preventDefault()
     }
