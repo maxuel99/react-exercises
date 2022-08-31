@@ -32,6 +32,10 @@ export class Login extends React.Component {
     }
 
     render() {
+        const LoginButtonStyle = {
+            backgroundColor: this.state.password.length < 8 ? 'red' : 'green',
+            color: 'black',
+        }
         return (
             <div>
                 <h1>My Login</h1>
@@ -43,7 +47,7 @@ export class Login extends React.Component {
                 </div>
 
                 <div>
-                    <button name="login" disabled={!this.state.username} onClick={this.onLogin}>Login</button>
+                    <button name="login" disabled={!this.state.username} style={LoginButtonStyle} onClick={this.onLogin}>Login</button>
                     <button onClick={this.handleResetState}>Reset</button>
                 </div>
             </div>
