@@ -38,17 +38,17 @@ export class Login extends React.Component {
         }
         return (
             <div>
-                <h1>My Login</h1>
+                <h1 className="underline mx-3 mb-2">My Login</h1>
 
                 <div>
-                    <input name="username" type="text" value={this.state.username} onChange={this.handleInputChange}/>
-                    <input name="password" type="password" value={this.state.password} onChange={this.handleInputChange}/>
+                    <input name="username" type="text" value={this.state.username} className="ml-3 mt-3 mb-2 border border-black" placeholder="--username--" onChange={this.handleInputChange}/>
+                    <input name="password" type="password" value={this.state.password} className="ml-3 mr-2 mt-3 mb-2 border border-black" placeholder="--password--" onChange={this.handleInputChange}/>
                     <input name="remember" type="checkbox" checked={this.state.remember} onChange={this.handleInputChange}/>
                 </div>
 
                 <div>
-                    <button name="login" disabled={!this.state.username} style={LoginButtonStyle} onClick={this.onLogin}>Login</button>
-                    <button onClick={this.handleResetState}>Reset</button>
+                    <button name="login" disabled={!this.state.username} style={LoginButtonStyle} className="border border-black rounded mr-1 ml-3 px-1" onClick={this.onLogin}>Login</button>
+                    <button className="border border-black rounded bg-white px-1" onClick={this.handleResetState}>Reset</button>
                 </div>
             </div>
         )

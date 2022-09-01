@@ -7,7 +7,7 @@ export class CounterDisplay extends React.Component {
             color: 'lightgreen'
         }
 
-        return <h1 style={MyStyle}>
+        return <h1 style={MyStyle} className="mx-3">
             Count: {this.props.count}
         </h1>
     }
