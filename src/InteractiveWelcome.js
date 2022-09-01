@@ -21,7 +21,7 @@ export class InteractiveWelcome extends React.Component {
                 <h1>
                     <Welcome name={this.state.username}/>
                 </h1>
-                <input name="username" type="text" value={this.state.username} className="ml-4 mt-3 mb-2 mr-4 border border-black" placeholder="--name--" onChange={this.handleInputChange}/>
+                <input name="username" type="text" value={this.state.username} className="mx-3 mt-3 mb-2 mr-4 border border-black" placeholder="--name--" onChange={this.handleInputChange}/>
             </div>
         )
     }
