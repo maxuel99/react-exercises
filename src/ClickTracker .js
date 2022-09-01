@@ -1,16 +1,26 @@
 import React from "react";
 
 export class CLickTracker extends React.Component {
+    state = {
+        track: ''
+    }
+
     handleButton = (event) => {
-        console.log(event.timeStamp)
+        console.log(event.target.innerText)
+        this.setState(() => {
+            return {
+                track: event.target.innerText
+            }
+        })
     }
     
     render() {
         return (
-            <div onClick={this.handleButton} style={{marginTop: "1rem"}}>
-                <button><img src="https://cdn-icons-png.flaticon.com/512/7645/7645064.png" alt=""  width={'50px'}/></button>
-                <button><img src="https://cdn-icons-png.flaticon.com/512/7645/7645252.png" alt=""  width={'50px'}/></button>
-                <button><img src="https://cdn-icons-png.flaticon.com/512/7645/7645255.png" alt=""  width={'50px'}/></button>
+            <div>
+                <button name="my-btn" onClick={this.handleButton} >Primo</button>
+                <button name="my-btn-2" onClick={this.handleButton} >Secondo</button>
+                <button name="my-btn-3" onClick={this.handleButton} >Terzo</button>
+                <h1>{this.state.track}</h1>
             </div>
         )
     }
