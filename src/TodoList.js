@@ -50,7 +50,8 @@ export class TodoList extends React.Component {
                 </ul>
                 <form onSubmit={this.addNewItem}>
                     <input name="todo" type="text" value={this.state.todo} className="mx-3 mt-2 mb-3 border border-black" onChange={this.handleInputChange} placeholder="--Add-item--" />
-                    <button type="submit" className="border border-black rounded mr-1 bg-lime-500 px-1">Add</button>
+                    <br />
+                    <button type="submit" className="border border-black rounded ml-4 mr-1 mb-3 bg-lime-500 px-1">Add</button>
                     <button type="reset" className="border border-black rounded mr-1 bg-white px-1" onClick={this.handleResetInput}>Reset</button>
                     <button type="button" className="border border-black rounded bg-red-500 px-1" onClick={this.handleRemoveItem}>Remove</button>
                 </form>

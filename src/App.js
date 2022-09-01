@@ -27,7 +27,7 @@ const items = [
 export class App extends React.Component {
     render() {
         return (
-            <Container>
+            <Container title="My Awesome Application">
                 <HelloWorld />
                 <Welcome age='23' />
                 <Counter />
