@@ -23,6 +23,13 @@ export class TodoList extends React.Component {
         event.preventDefault()
     }
 
+    handleRemoveItem = () => {
+        let { item, todo } = this.state;
+        item.pop(todo);
+        this.setState({item: item});
+
+    }
+
     handleResetInput = () => {
         this.setState({
             item: [],
@@ -45,6 +52,7 @@ export class TodoList extends React.Component {
                     <input name="todo" type="text" value={this.state.todo} onChange={this.handleInputChange} placeholder="--Add-item--" />
                     <button type="submit">Add</button>
                     <button type="reset" onClick={this.handleResetInput}>Reset</button>
+                    <button type="button" onClick={this.handleRemoveItem}>Remove</button>
                 </form>
             </div>
         )
