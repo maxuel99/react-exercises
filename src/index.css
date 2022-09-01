@@ -6,3 +6,8 @@
     background-color: #a09e9e;
     border: .2rem solid #000000;
 }
+
+.container {
+    background-color: #ffffff;
+    border: .2rem solid #ff0000;
+}
