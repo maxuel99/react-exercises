@@ -37,11 +37,12 @@ export class App extends React.Component {
                 <Login />
                 <UncontrolledLogin />
                 <Colors todos={todos} />
-                <TodoList items={items} render={(item) => {
-                    return (
-                        <div>{item}</div>
-                    )
-                }}>
+                <TodoList items={items}>
+                    {(item) => {
+                        return (
+                            <div>{item}</div>
+                        )
+                    }}
                 </TodoList>
             </Container>
         )
