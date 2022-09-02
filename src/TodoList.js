@@ -45,8 +45,8 @@ export class TodoList extends React.Component {
                 <ul className="list-inside list-disc">
                     {this.props.items.map((item) => (
                         <li key={item.id}>{item.name}</li>))}
-                    {this.state.item.map((subItems, subIndex) => (
-                        <li key={subItems + subIndex}>{subItems}</li>))}
+                    {this.props.render(this.state.item.map((subItems, subIndex) => (
+                        <li key={subItems + subIndex}>{subItems}</li>)))}
                 </ul>
                 <form onSubmit={this.addNewItem}>
                     <input name="todo" type="text" value={this.state.todo} className="mx-3 mt-2 mb-3 border border-black" onChange={this.handleInputChange} placeholder="--Add-item--" />
