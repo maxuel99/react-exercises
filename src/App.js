@@ -4,8 +4,10 @@ import { CLickTracker } from "./ClickTracker ";
 import { Colors } from "./Colors";
 import { Container } from "./Container";
 import { Counter } from "./Counter";
+import { DisplayLanguage } from "./DisplayLanguage";
 import { HelloWorld } from "./HelloWorld";
 import { InteractiveWelcome } from "./InteractiveWelcome";
+import { LanguageContext } from "./LanguageContext";
 import { Login } from "./Login";
 import { TodoList } from "./TodoList";
 import { UncontrolledLogin } from "./UncontrolledLogin ";
@@ -25,26 +27,30 @@ const items = [
 ]
 
 export class App extends React.Component {
+
     render() {
         return (
-            <Container title="My Awesome Application">
-                <HelloWorld />
-                <Welcome age='23' />
-                <Counter />
-                <ClickCounter />
-                <CLickTracker />
-                <InteractiveWelcome />
-                <Login />
-                <UncontrolledLogin />
-                <Colors todos={todos} />
-                <TodoList items={items}>
-                    {(item) => {
-                        return (
-                            <div>{item}</div>
-                        )
-                    }}
-                </TodoList>
-            </Container>
+                <Container title="My Awesome Application">
+                    <LanguageContext.Provider>
+                        <DisplayLanguage />
+                    </LanguageContext.Provider>
+                    <HelloWorld />
+                    <Welcome age='23' />
+                    <Counter />
+                    <ClickCounter />
+                    <CLickTracker />
+                    <InteractiveWelcome />
+                    <Login />
+                    <UncontrolledLogin />
+                    <Colors todos={todos} />
+                    <TodoList items={items}>
+                        {(item) => {
+                            return (
+                                <div>{item}</div>
+                            )
+                        }}
+                    </TodoList>
+                </Container>  
         )
     }
 }
