@@ -9,6 +9,7 @@ import { HelloWorld } from "./HelloWorld";
 import { InteractiveWelcome } from "./InteractiveWelcome";
 import { LanguageContext } from "./LanguageContext";
 import { Login } from "./Login";
+import { Sum } from "./Sum";
 import { TodoList } from "./TodoList";
 import { UncontrolledLogin } from "./UncontrolledLogin ";
 import { Welcome } from "./Welcome";
@@ -50,6 +51,7 @@ export class App extends React.Component {
                             )
                         }}
                     </TodoList>
+                    <Sum number={[2, 4, 6, 8]}/>
                 </Container>  
         )
     }
