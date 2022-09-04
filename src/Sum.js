@@ -1,6 +1,6 @@
 export function Sum(props) {
     
-    const sum = props.number.reduce((accumulator, value) => {
+    const sum = props.numbers.reduce((accumulator, value) => {
         return accumulator + value;
     },0)
 
