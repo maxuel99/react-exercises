@@ -32,7 +32,7 @@ export class App extends React.Component {
     render() {
         return (
                 <Container title="My Awesome Application">
-                    <LanguageContext.Provider>
+                    <LanguageContext.Provider value="">
                         <DisplayLanguage />
                     </LanguageContext.Provider>
                     <HelloWorld />

@@ -48,7 +48,7 @@ export class TodoList extends React.Component {
                         <li key={item.id}>{item.name}</li>))}
                     {this.props.children(this.state.item.map((subItems, subIndex) => (
                         <li key={subItems + subIndex}>{subItems}
-                        <button value={subIndex} type="button" className="border border-black rounded bg-red-500 px-1" onClick={this.handleRemoveItem}>Remove</button>
+                        <button value={subIndex} type="button" className="ml-2 border border-black rounded bg-red-500 px-1" onClick={this.handleRemoveItem}>Remove</button>
                         </li>)))}
                 </ul>
                 <form onSubmit={this.addNewItem}>
@@ -56,7 +56,6 @@ export class TodoList extends React.Component {
                     <br />
                     <button type="submit" className="border border-black rounded ml-4 mr-1 mb-3 bg-lime-500 px-1">Add</button>
                     <button type="reset" className="border border-black rounded mr-1 bg-white px-1" onClick={this.handleResetInput}>Reset</button>
-                    <button type="button" className="border border-black rounded bg-red-500 px-1" onClick={this.handleRemoveItem}>Remove</button>
                 </form>
             </div>
         )
