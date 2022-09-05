@@ -1,4 +1,5 @@
 import React from "react";
+import { useEffect } from "react";
 import { useState } from "react";
 import  { CounterButton }  from "./CounterButton";
 
@@ -32,6 +33,10 @@ import  { CounterButton }  from "./CounterButton";
 
 export function ClickCounter({ initialValue = 0}) {
     const [counter, setCounter] = useState(initialValue)
+
+    useEffect((onCounterChange) => {
+        console.log(`The counter is now ${counter}`)
+    }, [counter])
 
     function handleCounterIncrement() {
         setCounter((c) => c + 1)
