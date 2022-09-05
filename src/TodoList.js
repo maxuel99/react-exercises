@@ -23,11 +23,12 @@ export class TodoList extends React.Component {
         event.preventDefault()
     }
 
-    handleRemoveItem = () => {
-        let { item, todo } = this.state;
-        item.pop(todo);
-        this.setState({item: item});
-
+    handleRemoveItem = (e) => {
+        this.setState(state => {
+            const newItem = [...state.item];
+            newItem.splice(e.target.value, 1);
+            return { item: newItem };
+        })
     }
 
     handleResetInput = () => {
@@ -46,7 +47,9 @@ export class TodoList extends React.Component {
                     {this.props.items.map((item) => (
                         <li key={item.id}>{item.name}</li>))}
                     {this.props.children(this.state.item.map((subItems, subIndex) => (
-                        <li key={subItems + subIndex}>{subItems}</li>)))}
+                        <li key={subItems + subIndex}>{subItems}
+                        <button value={subIndex} type="button" className="border border-black rounded bg-red-500 px-1" onClick={this.handleRemoveItem}>Remove</button>
+                        </li>)))}
                 </ul>
                 <form onSubmit={this.addNewItem}>
                     <input name="todo" type="text" value={this.state.todo} className="mx-3 mt-2 mb-3 border border-black" onChange={this.handleInputChange} placeholder="--Add-item--" />
