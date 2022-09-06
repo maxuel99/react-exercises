@@ -10,7 +10,7 @@ const GithubUser = ({ username }) => {
                 return response.json()
             })
             .then(json => {
-                console.log(json)
+                // console.log(json)
 
                 setData(json)
             })
@@ -18,7 +18,7 @@ const GithubUser = ({ username }) => {
 
     return ( 
         <div className="my-3">
-            <h2 className="text-2xl font-bold underline mx-3 mb-2">Github info</h2>
+            <h2 className="text-2xl font-bold underline mx-3 mb-2">Github Info</h2>
             <ul className="list-inside list-disc">
                 {data && <li>{data.name} [name]</li>}
                 {data && <li>{data.created_at} [created at]</li>}
