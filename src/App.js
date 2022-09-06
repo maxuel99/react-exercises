@@ -38,10 +38,9 @@ export class App extends React.Component {
       }
     
         addItemsHandler(newData){
-            this.setState({
-                items:  [...items, newData]
-            })
-            this.setState({newData: ''})
+            this.setState(previousState => ({
+                items:  [...previousState.items, newData]
+            }))
         }
 
 

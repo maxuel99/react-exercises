@@ -87,11 +87,12 @@ export function TodoList(props) {
 
     return(
         <div>
-                <form onSubmit={submitHandler}>
+            <h2 className="text-2xl font-bold underline mx-3 mb-2">My List</h2>
+            <form onSubmit={submitHandler}>
                     <input name="todo" type="text" value={item} className="mx-3 mt-2 mb-3 border border-black" onChange={itemHandler} placeholder="--Add-item--" />
                     <br />
                     <button type="submit" className="border border-black rounded ml-4 mr-1 mb-3 bg-lime-500 px-1">Add</button>
-                </form>
-            </div>
+            </form>
+        </div>
     )
 }
