@@ -10,6 +10,7 @@ import { InteractiveWelcome } from "./InteractiveWelcome";
 import { LanguageContext } from "./LanguageContext";
 import { Login } from "./Login";
 import { Sum } from "./Sum";
+import Todo from "./Todo";
 import { TodoList } from "./TodoList";
 import { UncontrolledLogin } from "./UncontrolledLogin ";
 import { Welcome } from "./Welcome";
@@ -28,6 +29,21 @@ const items = [
 ]
 
 export class App extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+          items: items
+        };
+        this.addItemsHandler = this.addItemsHandler.bind(this);
+      }
+    
+        addItemsHandler(newData){
+            this.setState({
+                items:  [...items, newData]
+            })
+            this.setState({newData: ''})
+        }
+
 
     render() {
         return (
@@ -44,13 +60,14 @@ export class App extends React.Component {
                     <Login />
                     <UncontrolledLogin />
                     <Colors todos={todos} />
-                    <TodoList items={items}>
-                        {(item) => {
+                    <TodoList onAddItem={this.addItemsHandler}>
+                        {/* {(item) => {
                             return (
                                 <div>{item}</div>
                             )
-                        }}
+                        }} */}
                     </TodoList>
+                    <Todo item={this.state.items} />
                     <Sum />
                 </Container>  
         )
