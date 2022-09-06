@@ -17,7 +17,7 @@ const GithubUser = ({ username }) => {
     }, [username])
 
     return ( 
-        <div>
+        <div className="my-3">
             <h2 className="text-2xl font-bold underline mx-3 mb-2">Github info</h2>
             <ul className="list-inside list-disc">
                 {data && <li>{data.name} [name]</li>}
