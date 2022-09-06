@@ -5,6 +5,7 @@ import { Colors } from "./Colors";
 import { Container } from "./Container";
 import { Counter } from "./Counter";
 import { DisplayLanguage } from "./DisplayLanguage";
+import GithubUser from "./GithubUser";
 import { HelloWorld } from "./HelloWorld";
 import { InteractiveWelcome } from "./InteractiveWelcome";
 import { LanguageContext } from "./LanguageContext";
@@ -52,6 +53,7 @@ export class App extends React.Component {
                         }}
                     </TodoList>
                     <Sum />
+                    <GithubUser username='maxuel99' />
                 </Container>  
         )
     }
