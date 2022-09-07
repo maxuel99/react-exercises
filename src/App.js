@@ -4,6 +4,7 @@ import { CLickTracker } from "./ClickTracker ";
 import { Colors } from "./Colors";
 import { Container } from "./Container";
 import { Counter } from "./Counter";
+import { CurrentPosition } from "./CurrentPosition";
 import { DisplayLanguage } from "./DisplayLanguage";
 import GithubUser from "./GithubUser";
 import GithubUserList from "./GithubUserList";
@@ -60,6 +61,7 @@ export class App extends React.Component {
                     <GithubUserList />
                     <HookCounter />
                     <HookForm />
+                    <CurrentPosition />
                 </Container>  
         )
     }
