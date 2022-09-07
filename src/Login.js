@@ -1,4 +1,6 @@
 import React from "react";
+import { useEffect } from "react";
+import { useRef } from "react";
 import { useState } from "react";
 
 // export class Login extends React.Component {
@@ -63,6 +65,12 @@ export function Login() {
         remember: false
     })
 
+    const inputRef = useRef()
+
+    useEffect(() => {
+        inputRef.current.focus()
+    }, [])
+
     function handleInputChange(event) {
         const { name, type, value, checked } = event.target
 
@@ -96,7 +104,7 @@ export function Login() {
             <h1 className="underline mx-3 mb-2">My Login</h1>
         
             <div>
-                <input name="username" type="text" value={data.username} className="ml-3 mt-3 mb-2 border border-black" placeholder="--username--" onChange={handleInputChange}/>
+                <input ref={inputRef} name="username" type="text" value={data.username} className="ml-3 mt-3 mb-2 border border-black" placeholder="--username--" onChange={handleInputChange}/>
                 <input name="password" type="password" value={data.password} className="ml-3 mr-2 mt-3 mb-2 border border-black" placeholder="--password--" onChange={handleInputChange}/>
                 <input name="remember" type="checkbox" checked={data.remember} onChange={handleInputChange}/>
             </div>
