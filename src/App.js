@@ -9,6 +9,7 @@ import GithubUser from "./GithubUser";
 import GithubUserList from "./GithubUserList";
 import { HelloWorld } from "./HelloWorld";
 import { HookCounter } from "./HookCounter";
+import { HookForm } from "./HookForm";
 import { InteractiveWelcome } from "./InteractiveWelcome";
 import { LanguageContext } from "./LanguageContext";
 import { Login } from "./Login";
@@ -58,6 +59,7 @@ export class App extends React.Component {
                     <GithubUser username='maxuel99' />
                     <GithubUserList />
                     <HookCounter />
+                    <HookForm />
                 </Container>  
         )
     }
