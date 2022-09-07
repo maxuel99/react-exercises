@@ -35,7 +35,7 @@ export class Login extends React.Component {
                 </div>
 
                 <div>
-                    <button name="login" disabled={!this.state.username} onClick={this.onLogin}>Login</button>
+                    <button name="login" disabled={!this.state.username || !this.state.password} onClick={this.onLogin}>Login</button>
                 </div>
             </div>
         )
