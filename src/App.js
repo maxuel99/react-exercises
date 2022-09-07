@@ -8,6 +8,7 @@ import { DisplayLanguage } from "./DisplayLanguage";
 import GithubUser from "./GithubUser";
 import GithubUserList from "./GithubUserList";
 import { HelloWorld } from "./HelloWorld";
+import { HookCounter } from "./HookCounter";
 import { InteractiveWelcome } from "./InteractiveWelcome";
 import { LanguageContext } from "./LanguageContext";
 import { Login } from "./Login";
@@ -56,6 +57,7 @@ export class App extends React.Component {
                     <Sum />
                     <GithubUser username='maxuel99' />
                     <GithubUserList />
+                    <HookCounter />
                 </Container>  
         )
     }
