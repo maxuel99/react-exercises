@@ -28,13 +28,13 @@ export function Counter(props) {
             
         return() => clearInterval(interval)
   
-    },[])        
+    },[props.incrementInterval, props.timeout])        
 
     useEffect(() => {
         if ((counter > 10) && (counter > 10 * props.initialValue)) {
             setCounter(props.initialValue)
         }
-    }) 
+    },[counter, props.initialValue]) 
     
     
     

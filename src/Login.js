@@ -102,7 +102,7 @@ export function Login() {
             </div>
         
             <div>
-                <button name="login" disabled={!data.username} style={LoginButtonStyle} className="border border-black rounded mr-1 ml-3 px-1" onClick={onLogin}>Login</button>
+                <button name="login" disabled={!data.username || !data.password} style={LoginButtonStyle} className="border border-black rounded mr-1 ml-3 px-1" onClick={onLogin}>Login</button>
                 <button className="border border-black rounded bg-white px-1" onClick={handleResetState}>Reset</button>
             </div>
         </div>      
