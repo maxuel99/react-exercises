@@ -1,7 +1,9 @@
 import { useGithubUser } from "./useGithubUser";
 
 const GithubUser = ({username}) => {
-    const { users, error, isLoading } = useGithubUser(username)
+    const { users, error, isLoading, onFetchUser } = useGithubUser(username)
+
+    const handleClick = () => onFetchUser()
 
     return ( 
         <div className="my-3">
@@ -9,7 +11,10 @@ const GithubUser = ({username}) => {
             <ul className="list-inside list-disc">
                 {isLoading && <h4>Loading...</h4>}
                 {error && <h4>There has been an error</h4>}
-                {users && <h4>{users.name}</h4>}
+                {users && <div>
+                    <h4>{users.name}</h4>
+                    <button className="border border-black rounded mr-1 bg-white px-1" onClick={handleClick}>Refresh</button>
+                </div>}
             </ul>
         </div>
      );
