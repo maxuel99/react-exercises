@@ -94,6 +94,7 @@ import { Counter } from "./Counter";
 import ShowGithubUser from "./ShowGithubUser";
 import GithubUserList from "./GithubUserList";
 import NotFound from "./Not Found";
+import GithubUser from "./GithubUser";
 
 export function App() {
     return ( 
@@ -110,6 +111,7 @@ export function App() {
 
                     <Route path="*" element={<NotFound />} />
                 </Routes>
+                <GithubUser/>
             </Container>
         </div>
      );
