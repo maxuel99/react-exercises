@@ -90,6 +90,7 @@ import { Container } from "./Container";
 import React from "react";
 import { Route, Routes } from "react-router-dom";
 import { Welcome } from "./Welcome";
+import { Counter } from "./Counter";
 
 export function App() {
     return ( 
@@ -97,6 +98,7 @@ export function App() {
             <Container title="My Awesome Application">
                 <Routes>
                     <Route path="/" element={<Welcome age="23" />} />
+                    <Route path="/counter" element={<Counter />} />
                 </Routes>
             </Container>
         </div>
