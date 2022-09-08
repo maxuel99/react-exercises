@@ -1,4 +1,5 @@
 import React from "react";
+import CarDetails from "./CarDetails";
 import { ClickCounter } from "./ClickCounter";
 import { CLickTracker } from "./ClickTracker ";
 import { Colors } from "./Colors";
@@ -62,6 +63,7 @@ export class App extends React.Component {
                     <HookCounter />
                     <HookForm />
                     <CurrentPosition />
+                    <CarDetails />
                 </Container>  
         )
     }
