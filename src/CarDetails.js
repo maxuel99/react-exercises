@@ -12,7 +12,7 @@ const CarDetails = ({initialData = {model: 'Tesla Model 3', year:'2017', color: 
         inputRef.current.elements.model.value = initialData.model
         inputRef.current.elements.year.value = initialData.year
         inputRef.current.elements.color.value = initialData.color
-    }, [])
+    }, [initialData])
 
 
     useEffect(() => {
