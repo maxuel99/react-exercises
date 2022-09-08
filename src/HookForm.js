@@ -29,7 +29,7 @@ export function HookForm() {
     const { data, onInputChange } = useForm()
 
     return (
-        <div>
+        <div className="my-2">
             <h2 className="text-2xl font-bold underline mx-3 mb-2">Hook Form</h2>
             <h4 className="ml-4">{data.username} {data.password}</h4>
             <input name="username" type="text" value={data.username} className="ml-3 mt-3 mb-2 border border-black" placeholder="--username--" onChange={onInputChange}/>

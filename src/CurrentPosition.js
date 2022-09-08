@@ -42,7 +42,7 @@ export function CurrentPosition() {
     const { location } = useCurrentPosition()
     
     return (
-        <div>
+        <div className="my-3">
             <h2 className="text-2xl font-bold underline mx-3 mb-2">My Location</h2>
             <p className="ml-4 italic">{location.loaded ? JSON.stringify(location) : ''}</p>
         </div>
