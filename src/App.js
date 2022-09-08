@@ -34,37 +34,49 @@ const items = [
 ]
 
 export class App extends React.Component {
+    state = {
+        language: ""
+    }
+
+    handleLanguageChange = (event) => {
+        this.setState({
+            language: event.target.value
+        })
+    }
 
     render() {
         return (
-                <Container title="My Awesome Application">
-                    <LanguageContext.Provider value="">
-                        <DisplayLanguage />
-                    </LanguageContext.Provider>
-                    <HelloWorld />
-                    <Welcome age='23' />
-                    <Counter />
-                    <ClickCounter />
-                    <CLickTracker />
-                    <InteractiveWelcome />
-                    <Login />
-                    <UncontrolledLogin />
-                    <Colors todos={todos} />
-                    <TodoList items={items}>
-                        {(item) => {
-                            return (
-                                <div>{item}</div>
-                            )
-                        }}
-                    </TodoList>
-                    <Sum />
-                    <GithubUser username='maxuel99' />
-                    <GithubUserList />
-                    <HookCounter />
-                    <HookForm />
-                    <CurrentPosition />
-                    <CarDetails />
-                </Container>  
-        )
+          <Container title="My Awesome Application">
+            <select value={this.state.language} onChange={this.handleLanguageChange} className={"mx-3 mb-2"}>
+              <option value="">--select-lang--</option>
+              <option value="en">English</option>
+              <option value="it">Italian</option>
+            </select>
+            <LanguageContext.Provider value={this.state.language}>
+              <DisplayLanguage />
+            </LanguageContext.Provider>
+            <HelloWorld />
+            <Welcome age="23" />
+            <Counter />
+            <ClickCounter />
+            <CLickTracker />
+            <InteractiveWelcome />
+            <Login />
+            <UncontrolledLogin />
+            <Colors todos={todos} />
+            <TodoList items={items}>
+              {(item) => {
+                return <div>{item}</div>;
+              }}
+            </TodoList>
+            <Sum />
+            <GithubUser username="maxuel99" />
+            <GithubUserList />
+            <HookCounter />
+            <HookForm />
+            <CurrentPosition />
+            <CarDetails />
+          </Container>
+        );
     }
 }
