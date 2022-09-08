@@ -27,7 +27,7 @@ export function Welcome(props) {
     const name = 'John'
     return ( 
         <div className="welcome mx-3">
-            <p>Welcome <strong>{props.name}</strong></p>
+            <p>Welcome <strong>{name}</strong></p>
             {props.age && props.age > 18 && props.age < 65 && name === 'John' &&
             <Age age={props.age}/>}
         </div>
