@@ -111,7 +111,7 @@ export function App() {
 
                     <Route path="*" element={<NotFound />} />
                 </Routes>
-                <GithubUser/>
+                <GithubUser username="maxuel99"/>
             </Container>
         </div>
      );

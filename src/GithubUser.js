@@ -1,7 +1,7 @@
 import { useGithubUser } from "./useGithubUser";
 
-const GithubUser = () => {
-    const { users, error, isLoading } = useGithubUser()
+const GithubUser = ({username}) => {
+    const { users, error, isLoading } = useGithubUser(username)
 
     return ( 
         <div className="my-3">
@@ -9,11 +9,7 @@ const GithubUser = () => {
             <ul className="list-inside list-disc">
                 {isLoading && <h4>Loading...</h4>}
                 {error && <h4>There has been an error</h4>}
-                {users && (
-                    users.map((user) => (
-                        <li key={user.login}>{user.login}</li>
-                    ))
-                )}
+                {users && <h4>{users.name}</h4>}
             </ul>
         </div>
      );
