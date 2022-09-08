@@ -86,6 +86,7 @@
 //     }
 // }
 
+import { Container } from "./Container";
 import React from "react";
 import { Route, Routes } from "react-router-dom";
 import { Welcome } from "./Welcome";
@@ -93,9 +94,11 @@ import { Welcome } from "./Welcome";
 export function App() {
     return ( 
         <div>
-            <Routes>
-                <Route path="/" element={<Welcome age="23" />} />
-            </Routes>
+            <Container title="My Awesome Application">
+                <Routes>
+                    <Route path="/" element={<Welcome age="23" />} />
+                </Routes>
+            </Container>
         </div>
      );
 }
