@@ -18,9 +18,9 @@ const root = ReactDOM.createRoot(document.querySelector('#root'))
 //     </BrowserRouter>
 // )
 
-// store.subscribe(() => {
-//     console.log(store.getState())
-// })
+store.subscribe(() => {
+    console.log(store.getState())
+})
 
 store.dispatch(incrementCounter(5))
 store.dispatch(addTodo({ title: "Fare la spesa", id: 1, completed: false }))
