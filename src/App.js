@@ -88,7 +88,7 @@
 
 import { Container } from "./Container";
 import React from "react";
-import { Route, Routes } from "react-router-dom";
+import { Route, Routes, Link } from "react-router-dom";
 import { Welcome } from "./Welcome";
 import { Counter } from "./Counter";
 import ShowGithubUser from "./ShowGithubUser";
@@ -97,6 +97,11 @@ export function App() {
     return ( 
         <div>
             <Container title="My Awesome Application">
+                <Link className='mx-3' to="/">Homepage</Link>
+                <br />
+                <Link className='mx-3' to="/counter">Show the counter</Link>
+                <br />
+                <Link className='mx-3' to="users/:username">Show Github's Usernames</Link>
                 <Routes>
                     <Route path="/" element={<Welcome age="23" />} />
                     <Route path="/counter" element={<Counter />} />
